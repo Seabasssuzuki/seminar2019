@@ -6,8 +6,22 @@
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
         function button1Pressed(){
+            //乱数を生成する
             var random = Math.random();
-            document.getElementById("result").innerHTML="hello,world";
+
+            //乱数を0-99の範囲にする
+            random= random *100
+            Math.floor(random);
+            
+            //おみくじの結果を決める
+            var fortune;
+            if(random>80){
+                fortune="大吉"
+            }else{
+                fortune="中吉"
+            }
+            //結果を表示する
+            document.getElementById("result").innerHTML=fortune;
         }
     </script>
 </head>
