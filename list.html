@@ -8,12 +8,16 @@
         function button1Pressed() {
 
             var text = "";
-            text = text + "<ul>";
-            for (var i = 0; i < 3; i++) {
-                text = text + "<li>" + (i + 1) + "</li>";
+            text = text + "<table boder='1'>"; //見栄え美しくしてもらった
+            for (var j = 1; j < 10; j++) {
+                text = text + "<tr>";           //text+"<tr>+jにしちゃうとtrにくくられて謎の一行がでてしまう（とにかくいらない）"
+                for (var i = 1; i < 10; i++) {
+                    text = text + "<th>" + i * j + "</th>";
+                }
+                text = text + "</tr>"
             }
-            text = text + "</ul>";
-            document.getElementById("x").innerHTML = text;
+            text = text + "</table>";
+            document.getElementById("x").innerHTML = text;  //テキストじゃないからinnerHTML
 
         }
 
@@ -21,8 +25,8 @@
 </head>
 
 <body>
-    <h1>リスト練習</h1>
-    <button onclick="button1Pressed()">リスト生成</button>
+    <h1>9×9</h1>
+    <button onclick="button1Pressed()">生成</button>
     <div id="x"></div>
 
 
