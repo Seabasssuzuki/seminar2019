@@ -5,33 +5,72 @@
     <meta charset="utf-8">
     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script>
-        function button1Pressed(){
-            //乱数を生成する
-            var random = Math.random();
+        function button1Pressed() {
 
-            //乱数を0-99の範囲にする
-            random= random *100
-            Math.floor(random);
-            
-            //おみくじの結果を決める
-            var fortune;
-            if(random>80){
-                fortune="大吉"
-            }else{
-                fortune="中吉"
-            }
+
+
+            //0以上2未満の乱数を生成する            
+            var i = (Math.random() * 2);
+            i = Math.floor(i);
+
             //結果を表示する
-            document.getElementById("result").innerHTML=fortune;
+            document.getElementById("result1").value = i;
+            var n = i * 1000;
+            i = (Math.random() * 2);
+            i = Math.floor(i);
+            //  n = n + i * 100;
+            document.getElementById("result2").value = i;
+
+            i = (Math.random() * 2);
+            i = Math.floor(i);
+            document.getElementById("result3").value = i;       //テキストフィールドはなぜかvalue
+            //   n = n + i * 10;            
+            i = (Math.random() * 2);
+            i = Math.floor(i);   //innerHTMLは開きタブと閉じタブの間に何かいれるとき
+            document.getElementById("result4").value = i;
+            //    n = n + i;
+
+            //var z = document.getElementById("a").value;
+            //z = Number(z);
+
+            //     if (z == n) {
+            //       result = "合っています"
+            // } else {
+            //   result = "間違っています"
+            // }
+        } function button2Pressed() {
+
+            var a = document.getElementById("result1").value;
+            var b = document.getElementById("result2").value;
+            var c = document.getElementById("result3").value;
+            var d = document.getElementById("result4").value;
+
+            a = Number(a);
+            b = Number(b);
+            c = Number(c);
+            d = Number(d);
+            var z = (a * 8) + (b * 4) + (c * 2) + d
+
+
+            document.getElementById("result").value = z;
         }
+
     </script>
 </head>
 
 <body>
-    <h1>XXXX</h1>
-    <button onclick="button1Pressed()">X</button>
-    <button onclick="button2Pressed()">Y</button>
+    <h1>2進数クイズ</h1>
+    <button onclick="button1Pressed()">生成</button>
+    <input id="a" type="text"><br>
+    <button onclick="button2Pressed();">答え合わせ</button>
+    <input id="result" type="text">
+
     <hr>
-    <p id="result">xxxxx</p>
+    <input id="result1" type="text">
+    <input id="result2" type="text">
+    <input id="result3" type="text">
+    <input id="result4" type="text">
+
 </body>
 
 </html>
