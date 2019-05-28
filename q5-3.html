@@ -19,6 +19,22 @@
 
             tweets.push(x);
             tweets.push(y);
+
+            var text = "";
+            text = text + "<table>";
+
+            for (var i = 0; i < 2; i++) {
+                text = text + "<tr>";
+                text = text + "<th>" + tweets[i].sid + "</th>";
+                text = text + "<th>" + tweets[i].tweet + "</th>";
+                text = text + "<th>" + tweets[i].date + "</th>";
+                text = text + "</tr>"
+            }
+
+            text = text + "</table>";
+            document.getElementById("x").innerHTML = text;
+
+
             console.log(tweets);
 
         }
