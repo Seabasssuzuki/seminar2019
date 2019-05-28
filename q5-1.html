@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function button1Pressed() {
+            var fruit = [];
+            fruit.push('りんご');
+            fruit.push('みかん');
+            //['りんご','みかん']
+            //fruit[0]  fruit[1]
+            //var x=0;
+            //fruit[x];
+
+            var text = "";
+            text = text + "<ul>";
+            for (var i = 0; i < 2; i++) {
+                text = text + "<li>" + fruit[i] + "</li>";
+            }
+            text = text + "</ul>";
+            document.getElementById("x").innerHTML = text;
+
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>配列Q5-1</h1>
+    <button onclick="button1Pressed()">リスト生成</button>
+    <div id="x"></div>
+
+
+
+</body>
+
+</html>
