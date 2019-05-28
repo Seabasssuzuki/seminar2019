@@ -1,0 +1,38 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        function button1Pressed() {
+
+            var tweets = [];
+            var x = {};
+            x.sid = 18117110;
+            x.tweet = 'なう';
+            x.date = '2019/05/28';
+            var y = {};
+            y.sid = 18117111;
+            y.tweet = 'なう';
+            y.date = '2019/05/27';
+
+            tweets.push(x);
+            tweets.push(y);
+            console.log(tweets);
+
+        }
+
+    </script>
+</head>
+
+<body>
+    <h1>配列Q5-3</h1>
+    <button onclick="button1Pressed()">リスト生成</button>
+    <div id="x"></div>
+
+
+
+</body>
+
+</html>
