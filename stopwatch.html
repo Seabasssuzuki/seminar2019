@@ -1,0 +1,58 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script>
+        var time = 0;           //変数外に書く
+        var timer;
+        var state = 1;//2?
+
+        function button1Pressed() {
+            if (state === 1) {
+                start();
+                state = 2;
+
+            } else {
+                stop();
+                state = 1;
+
+            }
+            timer = setInterval(tick, 1000); //1000ミリ秒＝1秒
+        } function tick() {
+            time = time + 1;
+            document.getElementById("result").innerHTML = time;
+        }
+        function button2Pressed() {
+
+
+            if (state === 1) {
+                reset();
+            } else {
+                lap();
+            }
+            clearInterval(timer);
+            //function stop
+
+        }
+        function button3Pressed() {
+            time = 0;
+            document.getElementById("result").innerHTML = time;
+        }
+
+
+    </script>
+</head>
+
+<body>
+    <h1>Stopwatch</h1>
+
+    <p id="result">xxxx</p>
+    <button onclick="button1Pressed()">A</button>
+    <button onclick="button2Pressed()">B</button>
+    <button onclick="button3Pressed()">C</button>
+
+</body>
+
+</html>
